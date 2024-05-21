@@ -45,6 +45,7 @@ async function crawlPage(baseURL, currentURL, pages) {
 
 		for (const nextURL of nextURLs) {
 			pages = await crawlPage(baseURL, nextURL, pages)
+           
 		}
 	} catch (err) {
 		console.log(`error in fetch: ${err.massage}, on page ${currentURL}`)

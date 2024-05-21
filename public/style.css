@@ -1,7 +1,13 @@
 #result {
-    margin-top: 50px;
-    height: 30px;
-    width: 50%;
-    background-color: aqua;
-    color: black;
+	margin-top: 50px;
+	height: 30px;
+	width: 50%;
+	background-color: aqua;
+	color: black;
+}
+
+#downloadBtn {
+	margin-top: 50px;
+	height: 30px;
+	width: 100px;
 }
