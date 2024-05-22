@@ -1,4 +1,10 @@
-#result {
+input {
+	width: 50%;
+	height: 30px;}
+	
+	
+	
+	#result {
 	margin-top: 50px;
 	height: 30px;
 	width: 50%;
@@ -10,4 +16,11 @@
 	margin-top: 50px;
 	height: 30px;
 	width: 100px;
+}
+
+#inputValidation {
+	height: 30px;
+	width: 50%;
+	color: #000;
+	background-color: cadetblue;
 }

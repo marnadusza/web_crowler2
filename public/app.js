@@ -6,12 +6,19 @@ document.getElementById('crawlerForm').addEventListener('submit', function (even
 
 	const userInput = document.getElementById('inputField').value
 	console.log(userInput)
-	const result = document.getElementById('result')
-	result.innerHTML = 'Please wait, page is crawling'
-	getInputValue(userInput)
+	const correctURL = checkUserInput(userInput);
+	if(correctURL) {
+		getInputValue(userInput)
+	} else {
+		const result = document.getElementById('result');
+		result.innerHTML = ''
+	}
+	
+
 })
 
 function getInputValue(input) {
+	result.innerHTML = 'Please wait, page is crawling'
 	const inputValue = input
 	console.log(input)
 
@@ -64,14 +71,26 @@ function createCSV(reciveData) {
 	const url = URL.createObjectURL(blob)
 	console.log(url)
 
-	const button = document.querySelector('button');
-	const aTag = document.createElement('a');
-	aTag.setAttribute('href', url);
+	const button = document.querySelector('button')
+	const aTag = document.createElement('a')
+	aTag.setAttribute('href', url)
 	aTag.setAttribute('download', 'crawling report csv')
-	button.appendChild(aTag);
+	button.appendChild(aTag)
 	aTag.click()
+	button.removeChild(aTag)
+	URL.revokeObjectURL(url)
 
 	console.log(button, aTag)
 }
 
-
+function checkUserInput(inputValue) {
+	const infoSpan = document.querySelector('span')
+	const validURL = /[(http(s)?):\/\/(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/
+	if (inputValue.match(validURL)) {
+		infoSpan.innerHTML = 'correct url'
+		return true
+	} else {
+		infoSpan.innerHTML = 'incorrect url'
+		return false
+	}
+}

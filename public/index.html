@@ -11,15 +11,17 @@
 
     <form id="crawlerForm" action="/submit" method="post">
     <label for="inputField">Enter url:</label>
-    <input type="text" id="inputField" name="userInput">
+    <input type="text" id="inputField" name="userInput" placeholder="https://example.com" required="true">
     <button type="submit">SUBMIT</button>
+    <div id="inputValidation"><span></span></div>
+
     </form>
 
     <div id="result">
     </div>
 
    <button id="downloadBtn">
-    
+    DOWNLOAD CSV
    </button>
 
     <script src="/app.js"></script>
